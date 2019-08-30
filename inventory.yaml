@@ -1,6 +1,9 @@
 ---
 all:
   hosts:
+    provisioning:
+      ansible_host: localhost
+      ansible_connection: local
     undercloud:
       ansible_host: localhost
       ansible_connection: local
