@@ -2,10 +2,11 @@
 REPO=${VALIDATION_REPOSITORY:="https://github.com/openstack/tripleo-validations.git"}
 INV=${INVENTORY:="/home/validation/inventory.yaml"}
 V_LIST=${VALIDATION_LIST:="dns no-op"}
+BRANCH=${REPO_BRANCH:="master"}
 
 val_dir=$(basename "${REPO}" .git)
 echo -n "Cloning repository ${REPO}"
-git clone -q "${REPO}"
+git clone -q -b "${REPO_BRANCH}" --single-branch "${REPO}"
 echo " ... DONE"
 
 if [ -z "${V_LIST}" ]; then
