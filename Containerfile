@@ -1,15 +1,19 @@
-FROM fedora:30
+FROM centos:7
 
 # Install git and ansible
-RUN yum install -y git ansible
+RUN yum install -y git ansible sudo
 RUN yum clean all
 
 COPY init.sh /init.sh
 RUN chmod 0755 /init.sh
 
-# Create validation user
-RUN useradd -c "Validation user" -m -s /bin/sh validation
-USER validation
-COPY inventory.yaml /home/validation/inventory.yaml
-WORKDIR /home/validation
+# Create sudoers file for stack user
+COPY sudoers /etc/sudoers
+RUN chmod 0400 /etc/sudoers
+
+# Create stack user
+RUN useradd -c "stack user" -m -s /bin/sh stack
+USER stack
+COPY inventory.yaml /home/stack/inventory.yaml
+WORKDIR /home/stack
 CMD ["/init.sh"]

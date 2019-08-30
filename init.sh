@@ -1,8 +1,8 @@
 #!/bin/sh
-REPO=${VALIDATION_REPOSITORY:="https://github.com/openstack/tripleo-validations.git"}
+REPO=${VALIDATION_REPOSITORY:="https://github.com/flofuchs/tripleo-validations.git"}
 INV=${INVENTORY:="/home/validation/inventory.yaml"}
-V_LIST=${VALIDATION_LIST:="dns no-op"}
-BRANCH=${REPO_BRANCH:="master"}
+V_LIST=${VALIDATION_LIST:="rhhi-next"}
+BRANCH=${REPO_BRANCH:="rhhi-next"}
 
 val_dir=$(basename "${REPO}" .git)
 echo -n "Cloning repository ${REPO}"
