@@ -1,6 +1,6 @@
 #!/bin/sh
 REPO=${VALIDATION_REPOSITORY:="https://github.com/flofuchs/tripleo-validations.git"}
-INV=${INVENTORY:="/home/validation/inventory.yaml"}
+INV=${INVENTORY:="/home/stack/inventory.yaml"}
 V_LIST=${VALIDATION_LIST:="rhhi-next"}
 BRANCH=${REPO_BRANCH:="rhhi-next"}
 
