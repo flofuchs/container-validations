@@ -1,7 +1,7 @@
 FROM centos:7
 
 # Install git and ansible
-RUN yum install -y git ansible sudo
+RUN yum install -y git ansible sudo iproute
 RUN yum clean all
 
 COPY init.sh /init.sh
